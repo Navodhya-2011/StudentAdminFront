@@ -4,18 +4,21 @@ import { Link } from "react-router-dom";
 import styles from "./styles.module.css";
 
 const Login = () => {
-	const [data, setData] = useState({ email: "", password: "" });
+	const [email, setEmail] = useState("");
+	const [password, setPassword] = useState("");
 	const [error, setError] = useState("");
 
 	const handleChange = ({ currentTarget: input }) => {
-		setData({ ...data, [input.name]: input.value });
+		
 	};
+	
 
 	const handleSubmit = async (e) => {
 		e.preventDefault();
 		try {
-			const url = "http://localhost:8080/api/auth";
-			const { data: res } = await axios.post(url, data);
+			const url = "http://localhost:4000/app/";
+			const data = { email: email, password: password }
+			const res  = await axios.post(url, data);
 			localStorage.setItem("token", res.data);
 			window.location = "/";
 		} catch (error) {
@@ -39,8 +42,8 @@ const Login = () => {
 							type="email"
 							placeholder="Email"
 							name="email"
-							onChange={handleChange}
-							value={data.email}
+							onChange={(e) => setEmail(e.target.value)}
+							
 							required
 							className={styles.input}
 						/>
@@ -48,8 +51,7 @@ const Login = () => {
 							type="password"
 							placeholder="Password"
 							name="password"
-							onChange={handleChange}
-							value={data.password}
+							onChange={(e) => setPassword(e.target.value)}
 							required
 							className={styles.input}
 						/>
