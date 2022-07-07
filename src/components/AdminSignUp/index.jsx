@@ -23,7 +23,7 @@ const AdminSignup = () => {
 	const handleSubmit = async (e) => {
 		e.preventDefault();
 		try {
-			const url = "http://localhost:4000/app/signup";
+			const url = "http://localhost:4000/app/adminsignup";
 			const { data: res } = await axios.post(url, data);
 			navigate("/login");
 			console.log(res.message);
@@ -52,15 +52,6 @@ const AdminSignup = () => {
 				<div className={styles.right}>
 					<form className={styles.form_container} onSubmit={handleSubmit}>
 						<h1>Create Account</h1>
-						<input
-							type="number"
-							placeholder="ID"
-							name="id"
-							onChange={handleChange}
-							value={data.id}
-							required
-							className={styles.input}
-						/>
                         <input
 							type="text"
 							placeholder="First Name"
@@ -94,15 +85,6 @@ const AdminSignup = () => {
 							name="mobile"
 							onChange={handleChange}
 							value={data.mobile}
-							required
-							className={styles.input}
-						/>
-                        <input
-							type="text"
-							placeholder="Status"
-							name="status"
-							onChange={handleChange}
-							value={data.status}
 							required
 							className={styles.input}
 						/>
