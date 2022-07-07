@@ -65,6 +65,13 @@ const Login = () => {
 						<button type="button" className={styles.white_btn}>
 							Sing Up
 						</button>
+						<br/><br/>
+					</Link>
+					<Link to="/adminsignup">
+					<button type="button" className={styles.white_btn}>
+							Admin Sing Up
+					</button>
+					
 					</Link>
 				</div>
 			</div>
