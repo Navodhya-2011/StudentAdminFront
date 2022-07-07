@@ -20,7 +20,7 @@ function InsertNote(){
 
         try {
             await axios
-                .post("/api/tutorial/add", {
+                .post("http://localhost:4000/note/insert", {
                     headers: {
                         authToken: localStorage.getItem("authToken"),
                     },
@@ -76,7 +76,7 @@ function InsertNote(){
                                 class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-1 focus:outline-green-300 focus:shadow-outline"
                                 id="username"
                                 type="text"
-                                placeholder="Author ID"
+                                placeholder="Title"
                                 onChange={(e) =>
                                     setTitle(e.target.value)
                                 }
