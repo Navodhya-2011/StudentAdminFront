@@ -2,6 +2,8 @@ import { Route, Routes, Navigate } from "react-router-dom";
 import Signup from "./components/Signup";
 import Login from "./components/Login";
 import AdminSignup from "./components/AdminSignUp";
+import InsertNote from "./Pages/Insert";
+import UpdateStudent from "./Pages/Update";
 
 function App() {
 
@@ -13,6 +15,8 @@ function App() {
 			<Route path="/login" exact element={<Login />} />
 			<Route path="/" element={<Navigate replace to="/login" />} />
       <Route path="/adminsignup" element={<AdminSignup />} />
+      <Route path="/insert" element={<InsertNote />} />
+      <Route path="/noteUpdate" element={<UpdateStudent />} />
     </Routes>
   );
 }
